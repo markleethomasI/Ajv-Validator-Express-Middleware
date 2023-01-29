@@ -2,7 +2,13 @@ const Ajv = require("ajv");
 const AjvErrors = require("ajv-errors");
 const AjvFormats = require("ajv-formats");
 
-module.exports = class AjvValidateMiddleware {
+/**
+ * AjvValidateMiddleware
+ * @class
+ * @classdesc Provides Ajv validation services to Express Routes
+ */
+
+class AjvValidateMiddleware {
     constructor() {
         this.#ajv = new Ajv({ allErrors: true });
         AjvErrors(this.#ajv);
@@ -84,3 +90,5 @@ module.exports = class AjvValidateMiddleware {
         };
     };
 };
+
+module.exports = AjvValidateMiddleware
