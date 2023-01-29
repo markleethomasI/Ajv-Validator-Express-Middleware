@@ -32,10 +32,14 @@ validateMiddleware.createSchema({
     },
 });
 
-const middleware = validateMiddleware.validate("params", "user2");
+const middleware = validateMiddleware.validate("params", "user");
 
 validateMiddleware.validate
 
-middleware({ params: {} }, "", (errors) => {
+middleware({ params: {
+    email: 'mark@google.com',
+    firstName: 'Mark',
+    lastName: 'Thomas'
+} }, "", (errors) => {
     console.log(errors);
 });

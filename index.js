@@ -32,6 +32,16 @@ module.exports = class AjvValidateMiddleware {
     }
 
     /**
+     * Adds a format to validator
+     * @param {String} formatName
+     * @param {Object} formatSchema
+     */
+
+    addFormat(formatName, formatSchema) {
+        this.#ajv.addFormat(formatName, formatSchema);
+    }
+
+    /**
      * Validate
      * Usage:
      *
