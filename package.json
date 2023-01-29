@@ -1,6 +1,6 @@
 {
   "name": "ajv-validate-middleware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ajv Express Validation Middleware",
   "main": "index.js",
   "scripts": {
