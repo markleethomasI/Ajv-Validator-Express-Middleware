@@ -78,12 +78,10 @@ class AjvValidateMiddleware {
                 const errorMessages = [];
 
                 validatorFunction.errors.forEach((error) => {
-                    errorMessages.push({
-                        message: error.message,
-                    });
+                    errorMessages.push(error.message);
                 });
 
-                return next(errorMessages);
+                return next(new Error(errorMessages));
             }
 
             next();
